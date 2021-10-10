@@ -66,5 +66,21 @@
                     IsHitTestVisible="True"
                     Click="CloseButton_Click"/>
         </DockPanel>
+
+        <!-- クライアント領域 -->
+        <Border Grid.Row="1" BorderBrush="Bisque" BorderThickness="4"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                👆 上のタイトルバーには、見えないタイトルバーが乗っていて、<LineBreak/>
+                タイトルバーに置いてある[閉じる]ボタンを押せません
+            </TextBlock>
+            
+            <Button Grid.Row="1" Width="100" Height="30" Content="閉じる" Click="CloseButton_Click"/>
+        </Grid>
     </Grid>
 </Window>
