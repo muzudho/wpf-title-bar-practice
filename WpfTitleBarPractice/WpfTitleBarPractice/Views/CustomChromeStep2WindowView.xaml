@@ -2,11 +2,15 @@
     カスタム クローム ウィンドウ（ステップ２）
     ==========================================
     
-    既存のウィンドウにスタイルを適用するサンプルです
+    既存のウィンドウのスタイルを、自作のスタイルで上書きするサンプルです。
+    閉じるボタンをクリックできないなどの不具合があります
     
     📖 [WindowChromeを使用した独自ウィンドウの作成](https://iyemon018.hatenablog.com/entry/2015/09/13/220155)
     
-    Windowタグに xmlns:System="clr-namespace:System;assembly=mscorlib" を追加しました
+    Windowタグに
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    Style="{DynamicResource bananaWindowStyle}"
+    を追加しました
 -->
 <Window x:Class="WpfTitleBarPractice.Views.CustomChromeStep2WindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -21,12 +25,17 @@
 
     <!-- ここに、このウィンドウで使うリソースを定義します -->
     <Window.Resources>
-        <System:Double x:Key="CaptionHeight">26</System:Double>
+        <System:Double x:Key="bananaCaptionHeight">26</System:Double>
+        
+        <!-- ウィンドウのスタイル -->
         <Style x:Key="bananaWindowStyle" TargetType="{x:Type Window}">
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
-                    <WindowChrome CornerRadius="3" GlassFrameThickness="1" ResizeBorderThickness="8"
-                                  UseAeroCaptionButtons="False" CaptionHeight="{DynamicResource CaptionHeight}" />
+                    <WindowChrome CornerRadius="3"
+                                  GlassFrameThickness="1"
+                                  ResizeBorderThickness="8"
+                                  UseAeroCaptionButtons="False"
+                                  CaptionHeight="{DynamicResource bananaCaptionHeight}" />
                 </Setter.Value>
             </Setter>
             <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -34,11 +43,26 @@
             <Setter Property="Background" Value="#FFFFFFCC"/>
             <Setter Property="BorderBrush" Value="#FF14A9FF"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="#FF993333"/>
         </Style>
     </Window.Resources>
 
+    <!-- クローム部、クライアント領域も含めたウィンドウ全体を覆うグリッド -->
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- タイトル バー -->
+        <DockPanel Background="AliceBlue">
+            <!-- タイトル -->
+            <TextBlock Text="{Binding Path=Title, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,3,12,3" FontSize="14.667"/>
+
+            <!-- 閉じるボタン -->
+            <Button Content="✕" Width="24" Height="24" HorizontalAlignment="Right"
+                    BorderThickness="0" Background="Red" Foreground="White" Click="CloseButton_Click"/>
+        </DockPanel>
     </Grid>
 </Window>

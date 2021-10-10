@@ -22,10 +22,13 @@
 
         <!-- タイトル バー -->
         <DockPanel Background="AliceBlue">
+            <!-- タイトル -->
             <TextBlock Text="{Binding Path=Title, RelativeSource={RelativeSource AncestorType=Window}}"
                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,3,12,3" FontSize="14.667"/>
+
+            <!-- 閉じるボタン -->
             <Button Content="✕" Width="24" Height="24" HorizontalAlignment="Right"
-                    Background="Red" BorderThickness="0" Foreground="White" Click="CloseButton_Click"/>
+                    BorderThickness="0" Background="Red" Foreground="White" Click="CloseButton_Click"/>
         </DockPanel>
     </Grid>
 </Window>
