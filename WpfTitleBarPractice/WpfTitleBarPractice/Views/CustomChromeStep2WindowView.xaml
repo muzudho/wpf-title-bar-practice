@@ -3,9 +3,10 @@
     ==========================================
     
     既存のウィンドウのスタイルを、自作のスタイルで上書きするサンプルです。
-    閉じるボタンをクリックできないなどの不具合があります
+    見えないクロームを追加して、下に被った [閉じる]ボタン をクリックできないというサンプルです
     
     📖 [WindowChromeを使用した独自ウィンドウの作成](https://iyemon018.hatenablog.com/entry/2015/09/13/220155)
+    📖 [Dev/Samples/WindowChromeSample/WindowChromeSample/MainWindow.xaml](https://github.com/Iyemon-018/Dev/blob/master/Samples/WindowChromeSample/WindowChromeSample/MainWindow.xaml)
     
     Windowタグに
     xmlns:System="clr-namespace:System;assembly=mscorlib"
@@ -69,7 +70,12 @@
             <TextBlock Text="{Binding Path=Title, RelativeSource={RelativeSource AncestorType=Window}}"
                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,3,12,3" FontSize="14.667"/>
 
-            <!-- 閉じるボタン -->
+            <!--
+                [閉じる]ボタン。
+                見えないクロームが上に被っていて押せませんが、
+                WindowChrome.IsHitTestVisibleInChrome="True" を追加すると
+                解決します
+            -->
             <Button Content="✕" Width="24" Height="50" HorizontalAlignment="Right"
                     BorderThickness="0" Background="Red" Foreground="White"
                     Click="CloseButton_Click"/>
