@@ -32,7 +32,6 @@
             <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ（ステップ１）" Click="CustomChromeStep1Button_Click" />
             <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ（ステップ２）" Click="CustomChromeStep2Button_Click" />
             <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ（ステップ３）" Click="CustomChromeStep3Button_Click"  />
-            <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ" Click="CustomeChromeWindowButton_Click" />
         </WrapPanel>
     </Grid>
 </Window>

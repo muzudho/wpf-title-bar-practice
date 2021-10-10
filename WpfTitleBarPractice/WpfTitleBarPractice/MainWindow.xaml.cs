@@ -78,11 +78,5 @@
             var subWindow = new CustomChromeStep3WindowView();
             subWindow.Show();
         }
-
-        private void CustomeChromeWindowButton_Click(object sender, RoutedEventArgs e)
-        {
-            var subWindow = new CustomChromeWindowView();
-            subWindow.Show();
-        }
     }
 }
