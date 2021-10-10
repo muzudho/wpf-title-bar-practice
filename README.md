@@ -1,4 +1,4 @@
-# wpf-title-bar-practice
+# wpf-window-chrome-practice
 
 WPFの自作タイトルバー作成の練習
 
