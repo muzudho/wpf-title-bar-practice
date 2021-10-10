@@ -57,6 +57,17 @@
             subWindow.Show();
         }
 
+        /// <summary>
+        /// [カスタム クローム ウィンドウ（ステップ２）]ボタン押下
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustomChromeStep2Button_Click(object sender, RoutedEventArgs e)
+        {
+            var subWindow = new CustomChromeStep2WindowView();
+            subWindow.Show();
+        }
+
         private void CustomeChromeWindowButton_Click(object sender, RoutedEventArgs e)
         {
             var subWindow = new CustomChromeWindowView();

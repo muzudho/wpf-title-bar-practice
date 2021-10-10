@@ -1,0 +1,44 @@
+﻿<!--
+    カスタム クローム ウィンドウ（ステップ２）
+    ==========================================
+    
+    既存のウィンドウにスタイルを適用するサンプルです
+    
+    📖 [WindowChromeを使用した独自ウィンドウの作成](https://iyemon018.hatenablog.com/entry/2015/09/13/220155)
+    
+    Windowタグに xmlns:System="clr-namespace:System;assembly=mscorlib" を追加しました
+-->
+<Window x:Class="WpfTitleBarPractice.Views.CustomChromeStep2WindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTitleBarPractice.Views"
+        mc:Ignorable="d"
+        Title="Custom Chrome Step 2" Width="600" Height="400"
+        Style="{DynamicResource bananaWindowStyle}">
+
+    <!-- ここに、このウィンドウで使うリソースを定義します -->
+    <Window.Resources>
+        <System:Double x:Key="CaptionHeight">26</System:Double>
+        <Style x:Key="bananaWindowStyle" TargetType="{x:Type Window}">
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome CornerRadius="3" GlassFrameThickness="1" ResizeBorderThickness="8"
+                                  UseAeroCaptionButtons="False" CaptionHeight="{DynamicResource CaptionHeight}" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <Setter Property="Background" Value="#FFFFFFCC"/>
+            <Setter Property="BorderBrush" Value="#FF14A9FF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        
+    </Grid>
+</Window>
