@@ -25,13 +25,13 @@
 
     <!-- ここに、このウィンドウで使うリソースを定義します -->
     <Window.Resources>
-        <System:Double x:Key="bananaCaptionHeight">26</System:Double>
+        <System:Double x:Key="bananaCaptionHeight">43</System:Double>
         
         <!-- ウィンドウのスタイル -->
         <Style x:Key="bananaWindowStyle" TargetType="{x:Type Window}">
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
-                    <WindowChrome CornerRadius="3"
+                    <WindowChrome CornerRadius="25,25,10,10"
                                   GlassFrameThickness="1"
                                   ResizeBorderThickness="8"
                                   UseAeroCaptionButtons="False"
