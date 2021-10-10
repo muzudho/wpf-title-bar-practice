@@ -1,0 +1,24 @@
+﻿<!--
+    WindowStyle="None" AllowsTransparency="True" Background="#00000000" を追加することで、
+    Windowを透明にします
+        WindowStyle="None" AllowsTransparency="True" Background="#00000000"
+    
+-->
+<Window x:Class="WpfTitleBarPractice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTitleBarPractice"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        >
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center">
+            ウィンドウは、以下の２つで構成されています。<LineBreak/>
+            * タイトルバーや、リサイズ用の枠を含んだ クローム（Chrome）部<LineBreak/>
+            * その内側の クライアント領域（Client Area）部
+        </TextBlock>
+        <Button Width="200" Height="30" Content="標準クロームのウィンドウ" Click="DefaultWindowButton_Click"></Button>
+    </StackPanel>
+</Window>
