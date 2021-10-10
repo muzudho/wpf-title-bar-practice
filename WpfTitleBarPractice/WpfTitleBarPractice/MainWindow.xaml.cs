@@ -29,9 +29,20 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void NoChromeWindowButton_Click(object sender, RoutedEventArgs e)
         {
             var subWindow = new NoChromeWindowView();
+            subWindow.Show();
+        }
+
+        /// <summary>
+        /// [リサイズ無しウィンドウ]ボタン押下
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoResizeWindowButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            var subWindow = new NoResizeWindowView();
             subWindow.Show();
         }
     }

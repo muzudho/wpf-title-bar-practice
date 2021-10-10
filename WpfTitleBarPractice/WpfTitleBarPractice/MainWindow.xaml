@@ -11,15 +11,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTitleBarPractice"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Width="600" Height="400"
         >
-    <StackPanel>
-        <TextBlock HorizontalAlignment="Center">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
             ウィンドウは、以下の２つで構成されています。<LineBreak/>
             * タイトルバーや、リサイズ用の枠を含んだ クローム（Chrome）部<LineBreak/>
             * その内側の クライアント領域（Client Area）部
         </TextBlock>
-        <Button Width="200" Height="30" Content="標準クロームのウィンドウ" Click="StandardChromeWindowButton_Click"/>
-        <Button Width="200" Height="30" Content="クローム無しウィンドウ" Click="Button_Click"/>
-    </StackPanel>
+        
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <Button Width="200" Height="30" Content="標準クロームのウィンドウ" Click="StandardChromeWindowButton_Click"/>
+            <Button Width="200" Height="30" Content="クローム無しウィンドウ" Click="NoChromeWindowButton_Click"/>
+            <Button Width="200" Height="30" Content="リサイズ無しウィンドウ" Click="NoResizeWindowButton_Click_1"/>
+        </StackPanel>
+    </Grid>
 </Window>
