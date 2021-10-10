@@ -72,7 +72,6 @@
             <!-- 閉じるボタン -->
             <Button Content="✕" Width="24" Height="50" HorizontalAlignment="Right"
                     BorderThickness="0" Background="Red" Foreground="White"
-                    IsHitTestVisible="True"
                     Click="CloseButton_Click"/>
         </DockPanel>
 
