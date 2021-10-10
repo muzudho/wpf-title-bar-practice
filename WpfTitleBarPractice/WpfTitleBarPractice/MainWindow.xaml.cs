@@ -45,5 +45,22 @@
             var subWindow = new NoResizeWindowView();
             subWindow.Show();
         }
+
+        /// <summary>
+        /// [カスタム クローム ウィンドウ（ステップ１）]ボタン押下
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustomChromeStep1Button_Click(object sender, RoutedEventArgs e)
+        {
+            var subWindow = new CustomChromeStep1WindowView();
+            subWindow.Show();
+        }
+
+        private void CustomeChromeWindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            var subWindow = new CustomChromeWindowView();
+            subWindow.Show();
+        }
     }
 }
