@@ -25,13 +25,14 @@
             * その内側の クライアント領域（Client Area）部
         </TextBlock>
         
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Width="200" Height="30" Content="標準クロームのウィンドウ" Click="StandardChromeWindowButton_Click"/>
             <Button Width="200" Height="30" Content="クローム無しウィンドウ" Click="NoChromeWindowButton_Click"/>
             <Button Width="200" Height="30" Content="リサイズ無しウィンドウ" Click="NoResizeWindowButton_Click_1"/>
             <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ（ステップ１）" Click="CustomChromeStep1Button_Click" />
             <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ（ステップ２）" Click="CustomChromeStep2Button_Click" />
+            <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ（ステップ３）" Click="CustomChromeStep3Button_Click"  />
             <Button Width="200" Height="30" Content="カスタム クローム ウィンドウ" Click="CustomeChromeWindowButton_Click" />
-        </StackPanel>
+        </WrapPanel>
     </Grid>
 </Window>

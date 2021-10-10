@@ -68,6 +68,17 @@
             subWindow.Show();
         }
 
+        /// <summary>
+        /// [カスタム クローム ウィンドウ（ステップ３）]ボタン押下
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustomChromeStep3Button_Click(object sender, RoutedEventArgs e)
+        {
+            var subWindow = new CustomChromeStep3WindowView();
+            subWindow.Show();
+        }
+
         private void CustomeChromeWindowButton_Click(object sender, RoutedEventArgs e)
         {
             var subWindow = new CustomChromeWindowView();
