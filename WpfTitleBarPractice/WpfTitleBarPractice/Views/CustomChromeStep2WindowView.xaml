@@ -21,21 +21,30 @@
         xmlns:local="clr-namespace:WpfTitleBarPractice.Views"
         mc:Ignorable="d"
         Title="Custom Chrome Step 2" Width="600" Height="400"
+        WindowStyle="None"
         Style="{DynamicResource bananaWindowStyle}">
 
     <!-- ここに、このウィンドウで使うリソースを定義します -->
     <Window.Resources>
-        <System:Double x:Key="bananaCaptionHeight">43</System:Double>
+        <!-- 追加したクローム（見えません）のタイトルバーの高さ -->
+        <System:Double x:Key="newBananaChromeCaptionHeight">25</System:Double>
         
         <!-- ウィンドウのスタイル -->
         <Style x:Key="bananaWindowStyle" TargetType="{x:Type Window}">
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
+                    <!--
+                        ウィンドウに元から付いているクロームとは別に、
+                        クロームを追加します。
+                        ウィンドウを移動させるためのタイトルバーが持っている機能などが
+                        付きますが、見た目が無いので見えません。
+                        また、このクロームにボタンが被ると　下になったボタンを押せません
+                    -->
                     <WindowChrome CornerRadius="25,25,10,10"
                                   GlassFrameThickness="1"
                                   ResizeBorderThickness="8"
                                   UseAeroCaptionButtons="False"
-                                  CaptionHeight="{DynamicResource bananaCaptionHeight}" />
+                                  CaptionHeight="{DynamicResource newBananaChromeCaptionHeight}" />
                 </Setter.Value>
             </Setter>
             <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -55,13 +64,13 @@
         </Grid.RowDefinitions>
 
         <!-- タイトル バー -->
-        <DockPanel Background="AliceBlue">
+        <DockPanel Height="50" Background="AliceBlue">
             <!-- タイトル -->
             <TextBlock Text="{Binding Path=Title, RelativeSource={RelativeSource AncestorType=Window}}"
                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,3,12,3" FontSize="14.667"/>
 
             <!-- 閉じるボタン -->
-            <Button Content="✕" Width="24" Height="24" HorizontalAlignment="Right"
+            <Button Content="✕" Width="24" Height="50" HorizontalAlignment="Right"
                     BorderThickness="0" Background="Red" Foreground="White"
                     IsHitTestVisible="True"
                     Click="CloseButton_Click"/>
@@ -77,7 +86,8 @@
 
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
                 👆 上のタイトルバーには、見えないタイトルバーが乗っていて、<LineBreak/>
-                タイトルバーに置いてある[閉じる]ボタンを押せません
+                タイトルバーに置いてある[閉じる]ボタンの上半分を押せません。<LineBreak/>
+                [閉じる]ボタンの下半分は押せることを確かめてください
             </TextBlock>
             
             <Button Grid.Row="1" Width="100" Height="30" Content="閉じる" Click="CloseButton_Click"/>
