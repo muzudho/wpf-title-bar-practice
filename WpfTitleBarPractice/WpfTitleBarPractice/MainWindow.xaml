@@ -19,6 +19,7 @@
             * タイトルバーや、リサイズ用の枠を含んだ クローム（Chrome）部<LineBreak/>
             * その内側の クライアント領域（Client Area）部
         </TextBlock>
-        <Button Width="200" Height="30" Content="標準クロームのウィンドウ" Click="DefaultWindowButton_Click"></Button>
+        <Button Width="200" Height="30" Content="標準クロームのウィンドウ" Click="StandardChromeWindowButton_Click"/>
+        <Button Width="200" Height="30" Content="クローム無しウィンドウ" Click="Button_Click"/>
     </StackPanel>
 </Window>

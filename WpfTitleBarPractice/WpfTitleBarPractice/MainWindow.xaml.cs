@@ -13,9 +13,25 @@
             InitializeComponent();
         }
 
-        private void DefaultWindowButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// [標準クロームのウィンドウ]ボタン押下
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StandardChromeWindowButton_Click(object sender, RoutedEventArgs e)
         {
             var subWindow = new StandardChromeWindowView();
+            subWindow.Show();
+        }
+
+        /// <summary>
+        /// [クローム無しウィンドウ]ボタン押下
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var subWindow = new NoChromeWindowView();
             subWindow.Show();
         }
     }
